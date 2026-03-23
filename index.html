@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -271,12 +271,18 @@
     margin: 0 auto;
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .section.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Fallback: if JS fails, show everything */
+  .no-js .section {
+    opacity: 1;
+    transform: none;
   }
 
   .section-label {
@@ -684,7 +690,7 @@
     <div class="gold-line"></div>
     <div class="contact-block">
       <a href="tel:+33783664594">+33 7 83 66 45 94</a>
-      <a href="/cdn-cgi/l/email-protection#1a68757e7463347773697b73747f5a72756e777b7376347c68"><span class="__cf_email__" data-cfemail="c9bba6ada7b0e7a4a0baa8a0a7ac89a1a6bda4a8a0a5e7afbb">[email&#160;protected]</span></a>
+      <a class="email-link">rodny.misaine&#64;hotmail.fr</a>
       <span>Paris, France</span>
     </div>
   </div>
@@ -757,7 +763,7 @@
   <!-- GRUSON & MISAINE -->
   <div class="exp-card">
     <div class="exp-meta">
-      <div class="exp-dates">2023<small>— 2024</small></div>
+      <div class="exp-dates">2023<small>— Present</small></div>
       <div class="exp-location">Paris</div>
     </div>
     <div class="exp-content">
@@ -1007,6 +1013,54 @@
 </div>
 
 <!-- ============ SCROLL ANIMATION ============ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const sections = document.querySelectorAll('.section');
-  const observer = new Intersection
+<script>
+  // Remove no-js class immediately
+  document.documentElement.classList.remove('no-js');
+
+  function revealSections() {
+    var sections = document.querySelectorAll('.section');
+
+    // Try IntersectionObserver first
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // stop watching once visible
+          }
+        });
+      }, {
+        threshold: 0.02,    // very low threshold — fires as soon as 2% is visible
+        rootMargin: '0px 0px -30px 0px'  // slight offset from bottom
+      });
+
+      sections.forEach(function(s) { observer.observe(s); });
+
+      // Safety net: if after 3 seconds some sections still hidden, force show
+      setTimeout(function() {
+        sections.forEach(function(s) { s.classList.add('visible'); });
+      }, 3500);
+
+    } else {
+      // Fallback for old browsers: show everything immediately
+      sections.forEach(function(s) { s.classList.add('visible'); });
+    }
+  }
+
+  // Set email link via JS to avoid email obfuscation by CDNs
+  var emailLink = document.querySelector('.email-link');
+  if (emailLink) {
+    var u = 'rodny.misaine'; var d = 'hotmail.fr';
+    emailLink.href = 'mai' + 'lto:' + u + '@' + d;
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealSections);
+  } else {
+    revealSections();
+  }
+</script>
+
+</body>
+</html>
