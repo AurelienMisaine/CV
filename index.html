@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodny MISAINE — Luxury Retail & Gallery Leader</title>
+<meta name="description" content="Results-oriented leader with nearly two decades shaping luxury retail experiences — RH, Dolce & Gabbana, Gucci, Michael Kors.">
+<meta name="author" content="Rodny Misaine">
+
+<!-- Open Graph (LinkedIn, Facebook, WhatsApp preview) -->
+<meta property="og:title" content="Rodny MISAINE — Luxury Retail & Gallery Leader">
+<meta property="og:description" content="19+ years of luxury retail leadership across RH, Dolce & Gabbana, Gucci & Michael Kors. €180M+ revenue managed.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+
+<!-- Favicon (simple gold diamond emoji as SVG favicon) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --cream: #f5f0e8;
+    --gold: #b8935a;
+    --gold-light: #d4b97c;
+    --slate: #2c2c2c;
+    --mist: #e8e2d8;
+    --accent: #1a3a4a;
+    --white: #fafaf7;
+    --subtle: #8a8578;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(184,147,90,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 40%;
+    background: linear-gradient(to top, rgba(184,147,90,0.06), transparent);
+    pointer-events: none;
+  }
+
+  .hero-left .name-pre {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: -1px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-left h1 span {
+    display: block;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-left .tagline {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 30px;
+    max-width: 400px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-left .gold-line {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 30px 0;
+    opacity: 0;
+    animation: expandLine 1s ease forwards 0.8s;
+  }
+
+  .hero-left .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 1s;
+  }
+
+  .contact-block a, .contact-block span {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-block a:hover { color: var(--gold); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-right .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .stat {
+    opacity: 0;
+    animation: slideUp 0.6s ease forwards;
+  }
+  .stat:nth-child(1) { animation-delay: 0.6s; }
+  .stat:nth-child(2) { animation-delay: 0.75s; }
+  .stat:nth-child(3) { animation-delay: 0.9s; }
+  .stat:nth-child(4) { animation-delay: 1.05s; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 52px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-top: 8px;
+  }
+
+  .brands-strip {
+    border-top: 1px solid var(--mist);
+    padding-top: 30px;
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards 1.2s;
+  }
+
+  .brands-strip h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-bottom: 20px;
+  }
+
+  .brand-logos {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brand-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--slate);
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  .brand-tag.current::after {
+    content: 'NOW';
+    position: absolute;
+    top: -8px; right: -28px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: var(--white);
+    background: var(--gold);
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+  /* ============ SCROLL INDICATOR ============ */
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.5s;
+    z-index: 10;
+  }
+
+  .scroll-hint span {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+
+  .scroll-hint .arrow {
+    width: 1px; height: 30px;
+    background: var(--gold);
+    position: relative;
+    animation: pulse 2s ease infinite;
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    padding: 100px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--ink);
+    margin-bottom: 50px;
+    line-height: 1.1;
+  }
+
+  /* ============ EXPERIENCE CARDS ============ */
+  .exp-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 50px 0;
+    border-bottom: 1px solid var(--mist);
+    position: relative;
+  }
+
+  .exp-card:last-child { border-bottom: none; }
+
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 200px; top: 50px;
+    width: 1px; height: calc(100% - 100px);
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .exp-meta {
+    text-align: right;
+    padding-right: 40px;
+  }
+
+  .exp-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1.2;
+  }
+
+  .exp-dates small {
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--subtle);
+  }
+
+  .exp-location {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--subtle);
+    margin-top: 10px;
+  }
+
+  .exp-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .exp-content .role {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .exp-content .scope {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--subtle);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .exp-content .resp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .resp-list li {
+    font-size: 13.5px;
+    color: var(--slate);
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+    font-weight: 300;
+  }
+
+  .resp-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 6px; height: 1px;
+    background: var(--gold);
+  }
+
+  .achievements-block {
+    background: rgba(184,147,90,0.05);
+    border-left: 2px solid var(--gold);
+    padding: 16px 20px;
+    margin-top: 10px;
+  }
+
+  .achievements-block h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .achievements-block li {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.7;
+    padding-left: 16px;
+    position: relative;
+    font-weight: 400;
+    list-style: none;
+    margin-bottom: 4px;
+  }
+
+  .achievements-block li::before {
+    content: '◆';
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--gold);
+    font-size: 7px;
+    line-height: 1.7;
+  }
+
+  /* ============ COMPETENCIES ============ */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .comp-cell {
+    padding: 35px;
+    border: 1px solid var(--mist);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .comp-cell:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .comp-cell:hover .comp-title,
+  .comp-cell:hover .comp-desc {
+    color: var(--white);
+  }
+
+  .comp-cell:hover .comp-icon {
+    color: var(--gold);
+  }
+
+  .comp-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    transition: color 0.4s;
+  }
+
+  .comp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: color 0.4s;
+  }
+
+  .comp-desc {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--subtle);
+    line-height: 1.6;
+    transition: color 0.4s;
+  }
+
+  /* ============ AWARDS ============ */
+  .awards-timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .awards-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, var(--gold), var(--mist));
+  }
+
+  .award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .award-item::before {
+    content: '';
+    position: absolute;
+    left: -44px; top: 28px;
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .award-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--gold);
+    min-width: 70px;
+  }
+
+  .award-text {
+    font-size: 15px;
+    color: var(--slate);
+    font-weight: 300;
+    padding-top: 10px;
+  }
+
+  /* ============ LANGUAGES ============ */
+  .lang-row {
+    display: flex;
+    gap: 60px;
+    margin-top: 20px;
+  }
+
+  .lang-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lang-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--ink);
+  }
+
+  .lang-level {
+    display: flex;
+    gap: 4px;
+  }
+
+  .lang-dot {
+    width: 20px; height: 3px;
+    background: var(--mist);
+    transition: background 0.3s;
+  }
+
+  .lang-dot.filled { background: var(--gold); }
+
+  /* ============ FOOTER ============ */
+  .footer-section {
+    background: var(--ink);
+    padding: 60px 80px;
+    text-align: center;
+  }
+
+  .footer-section p {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .footer-section .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    letter-spacing: 6px;
+  }
+
+  /* ============ SOFT SKILLS ============ */
+  .soft-skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .skill-pill {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 8px 20px;
+    border: 1px solid var(--mist);
+    color: var(--slate);
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .skill-pill:hover {
+    background: var(--ink);
+    color: var(--gold);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes expandLine {
+    from { opacity: 0; width: 0; }
+    to { opacity: 1; width: 60px; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    .hero { min-height: auto; grid-template-columns: 1fr; }
+    .hero-left { padding: 40px; }
+    .hero-right { padding: 40px; }
+    .section { padding: 40px 20px; }
+    .scroll-hint { display: none; }
+    .comp-cell:hover { background: transparent; }
+    body { background: white; }
+    .section { opacity: 1; transform: none; }
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 60px 30px; }
+    .hero-right { padding: 40px 30px; }
+    .section { padding: 60px 30px; }
+    .exp-card { grid-template-columns: 1fr; gap: 10px; }
+    .exp-card::before { display: none; }
+    .exp-meta { text-align: left; padding-right: 0; padding-bottom: 10px; }
+    .comp-grid { grid-template-columns: 1fr; }
+    .lang-row { flex-direction: column; gap: 20px; }
+    .footer-section { padding: 40px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="name-pre">Curriculum Vitae</div>
+    <h1>Misaine<span>Rodny</span></h1>
+    <p class="tagline">Results-oriented leader with nearly two decades shaping luxury retail experiences — from haute couture flagships to design-forward gallery concepts.</p>
+    <div class="gold-line"></div>
+    <div class="contact-block">
+      <a href="tel:+33783664594">+33 7 83 66 45 94</a>
+      <a href="/cdn-cgi/l/email-protection#1a68757e7463347773697b73747f5a72756e777b7376347c68"><span class="__cf_email__" data-cfemail="c9bba6ada7b0e7a4a0baa8a0a7ac89a1a6bda4a8a0a5e7afbb">[email&#160;protected]</span></a>
+      <span>Paris, France</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">19+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">€180M+</div>
+        <div class="stat-label">Revenue Managed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">800+</div>
+        <div class="stat-label">Team Members Led</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">+50%</div>
+        <div class="stat-label">Avg. Revenue Growth</div>
+      </div>
+    </div>
+
+    <div class="brands-strip">
+      <h3>Brand Portfolio</h3>
+      <div class="brand-logos">
+        <span class="brand-tag current">RH</span>
+        <span class="brand-tag">Dolce&nbsp;&&nbsp;Gabbana</span>
+        <span class="brand-tag">Gucci</span>
+        <span class="brand-tag">Michael&nbsp;Kors</span>
+        <span class="brand-tag">Bershka</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="section-label">01 — Experience</div>
+  <h2 class="section-title">Professional<br>Journey</h2>
+
+  <!-- RH -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2025<small>— Present</small></div>
+      <div class="exp-location">Paris — Champs-Élysées</div>
+    </div>
+    <div class="exp-content">
+      <h3>RH — Restoration Hardware</h3>
+      <div class="role">Associate Gallery Leader</div>
+      <div class="scope">Reporting to: Gallery Leader · Flagship Gallery</div>
+      <ul class="resp-list">
+        <li>Lead all facets of the gallery business, delivering a first-class luxury experience for associates and clients</li>
+        <li>Educate teams on RH's product assortment and luxury design point of view</li>
+        <li>Coach, lead, and develop cross-functional teams to promote a positive and dynamic environment</li>
+        <li>Drive results through team engagement, empowerment, and accountability</li>
+        <li>Attract and retain top talent at all levels for the gallery's evolving business needs</li>
+        <li>Partner with the People Team to address all HR concerns swiftly and appropriately</li>
+        <li>Ensure operational excellence across sales floor, stock room, and back-office</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GRUSON & MISAINE -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2023<small>— Present</small></div>
+      <div class="exp-location">Paris</div>
+    </div>
+    <div class="exp-content">
+      <h3>GRUSON & MISAINE Services</h3>
+      <div class="role">Founder — Luxury & Lifestyle Consulting</div>
+      <div class="scope">Independent consultancy</div>
+      <ul class="resp-list">
+        <li>Design and deliver tailored training programs for employee development and performance improvement</li>
+        <li>Conduct needs assessments and create learning strategies aligned with organizational goals</li>
+        <li>Lead leadership development initiatives, coaching managers on engagement and productivity</li>
+        <li>Implement digital learning solutions (LMS, e-learning) to scale training across departments</li>
+        <li>Measure training effectiveness through KPIs and feedback loops</li>
+      </ul>
+      <div class="achievements-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>25% client retention within the first year through commercial strategy and team mobilization</li>
+          <li>27% increase in employee retention over 12 months</li>
+          <li>+39% sales growth between 2023 and mid-2024</li>
+          <li>79% employee satisfaction rate through improved working conditions</li>
+          <li>20% increase in VIP client engagement through tailored elevated service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D&G -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2018<small>— 2023</small></div>
+      <div class="exp-location">Paris — Montaigne / St Honoré</div>
+    </div>
+    <div class="exp-content">
+      <h3>Dolce & Gabbana</h3>
+      <div class="role">Store Director</div>
+      <div class="scope">Financial accountability: €48M across 4 locations · 132 staff members</div>
+      <ul class="resp-list">
+        <li>Transmit company DNA and core values; oversee recruitment for entry to mid-senior roles</li>
+        <li>Provide and oversee training sessions on company policies, procedures, and customer service</li>
+        <li>Drive daily business as a top-5 store globally — became 3rd best store worldwide in two years</li>
+        <li>Implement strategies impacting sales and KPIs on long and short terms</li>
+        <li>Manage partnerships with luxury hotels, palaces, and third parties</li>
+        <li>Oversee recruitment for Alta Moda clients and Made To Measure development</li>
+      </ul>
+      <div class="achievements-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>#1 store in France and Europe — 2.3 UPT / AVP €1,200 / 35% CVR</li>
+          <li>Winner of two clienteling awards — Best Store Director Award</li>
+          <li>Highest staff retention rate across the network</li>
+          <li>RITZ Hotel Pop-Up / Four Seasons Grand Hotel Pop-Up Store</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GUCCI -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2016<small>— 2018</small></div>
+      <div class="exp-location">Paris — Montaigne</div>
+    </div>
+    <div class="exp-content">
+      <h3>Gucci</h3>
+      <div class="role">Associate Store Manager</div>
+      <div class="scope">Financial accountability: €55M · 90 staff members</div>
+      <ul class="resp-list">
+        <li>Implement high-quality business strategies aligned with short- and long-term objectives</li>
+        <li>Manage Client Building and Retention through consistent Outreach (Loyal–Active–Historic cycle)</li>
+        <li>Lead and train subordinates to build a high-performing managerial team</li>
+        <li>Oversee all training activities during designer transition periods</li>
+        <li>Implement partnerships with luxury hotels and third parties for brand awareness</li>
+      </ul>
+      <div class="achievements-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>1,200 sq. meter store refurbishment</li>
+          <li>Doubled VIP Room target: €1.7M (+70% vs. target)</li>
+          <li>50% increase in omnichannel sales</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MICHAEL KORS -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2013<small>— 2016</small></div>
+      <div class="exp-location">Paris — St-Honoré</div>
+    </div>
+    <div class="exp-content">
+      <h3>Michael Kors</h3>
+      <div class="role">Store Manager</div>
+      <div class="scope">Financial accountability: €14M · 29 staff members</div>
+      <ul class="resp-list">
+        <li>Manage retail excellence and hit targets consistently for a top-10 store</li>
+        <li>Review and approve all visual merchandising, lighting, and marketing presentations</li>
+        <li>Provide training and development to the management team</li>
+        <li>Main communication link with Head Office for brand direction</li>
+      </ul>
+      <div class="achievements-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>3 store openings: Beaugrenelle, Le Marais, Parly 2</li>
+          <li>#1 store in France — €13M / 2.17 UPT / 39% CVR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERSHKA -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="exp-dates">2006<small>— 2013</small></div>
+      <div class="exp-location">Paris — Multi-site</div>
+    </div>
+    <div class="exp-content">
+      <h3>Bershka — Inditex Group</h3>
+      <div class="role">District Manager — NE & Western France</div>
+      <div class="scope">Financial accountability: €69M · 16 stores · 670 staff members</div>
+      <ul class="resp-list">
+        <li>Exceed sales targets and KPIs across 16-store district</li>
+        <li>Participate in quarterly market meetings with buying team at Spain HQ</li>
+        <li>Coach Store Managers and inspire teams to exceed commercial goals</li>
+        <li>Drive operational excellence through store audit compliance (avg. 87%)</li>
+      </ul>
+      <div class="achievements-block">
+        <h4>Key Results</h4>
+        <ul>
+          <li>Region turnover raised by 40% in one semester</li>
+          <li>Promoted 3 Store Managers, 3 ASMs, and 2 Visual Merchandisers</li>
+          <li>4 store refurbishments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETENCIES ============ -->
+<section class="section" id="competencies">
+  <div class="section-label">02 — Expertise</div>
+  <h2 class="section-title">Core<br>Competencies</h2>
+
+  <div class="comp-grid">
+    <div class="comp-cell">
+      <div class="comp-icon">◈</div>
+      <div class="comp-title">Leadership & Team Motivation</div>
+      <div class="comp-desc">Proven ability to inspire teams and executives to exceed objectives through trust, engagement, and clear communication.</div>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-icon">▲</div>
+      <div class="comp-title">Sales Optimization & KPIs</div>
+      <div class="comp-desc">Demonstrated expertise driving commercial performance with an average +50% revenue increase through tailored strategies.</div>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-icon">◎</div>
+      <div class="comp-title">CRM & Client Loyalty</div>
+      <div class="comp-desc">Designing effective CRM strategies for VIP and local clientele. Key contributor to prospect pipelines and retention.</div>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-icon">⬡</div>
+      <div class="comp-title">Operational Excellence</div>
+      <div class="comp-desc">Implementing retail operational processes ensuring efficiency, compliance, and outstanding customer satisfaction.</div>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-icon">✦</div>
+      <div class="comp-title">Product & Design Expertise</div>
+      <div class="comp-desc">Strong proficiency in product strategy, luxury design aesthetics, merchandising, and lifecycle management.</div>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-icon">◇</div>
+      <div class="comp-title">Training & Development</div>
+      <div class="comp-desc">Fostering talent through impactful programs, empowering teams to achieve operational and service excellence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section class="section" id="awards">
+  <div class="section-label">03 — Recognition</div>
+  <h2 class="section-title">Awards &<br>Achievements</h2>
+
+  <div class="awards-timeline">
+    <div class="award-item">
+      <div class="award-year">2023</div>
+      <div class="award-text">Best Store Director Worldwide — Dolce & Gabbana</div>
+    </div>
+    <div class="award-item">
+      <div class="award-year">2022</div>
+      <div class="award-text">Best Store Environment</div>
+    </div>
+    <div class="award-item">
+      <div class="award-year">2018</div>
+      <div class="award-text">Best Comp Figures vs. LY in Europe · 100% Voice of Customer</div>
+    </div>
+    <div class="award-item">
+      <div class="award-year">2008–10</div>
+      <div class="award-text">Best Turn Over CA/Target vs. LY — three consecutive years</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUAGES & SOFT SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="section-label">04 — Skills</div>
+  <h2 class="section-title">Languages &<br>Soft Skills</h2>
+
+  <div class="lang-row">
+    <div class="lang-item">
+      <div class="lang-name">French</div>
+      <div class="lang-level">
+        <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+      </div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">English</div>
+      <div class="lang-level">
+        <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+      </div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">Spanish</div>
+      <div class="lang-level">
+        <div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="soft-skills-cloud" style="margin-top: 50px;">
+    <span class="skill-pill">Self-confidence</span>
+    <span class="skill-pill">Stress Management</span>
+    <span class="skill-pill">Ethics & Positive Attitude</span>
+    <span class="skill-pill">Effective Communication</span>
+    <span class="skill-pill">Teamwork & Flexibility</span>
+    <span class="skill-pill">Leadership & Strategic Vision</span>
+    <span class="skill-pill">Decision-Making</span>
+    <span class="skill-pill">Professionalism</span>
+    <span class="skill-pill">Continuous Growth</span>
+    <span class="skill-pill">Luxury Design Sensibility</span>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer-section">
+  <div class="footer-name">MISAINE</div>
+  <p>References promptly on demand</p>
+</div>
+
+<!-- ============ SCROLL ANIMATION ============ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new Intersection
