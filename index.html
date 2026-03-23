@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -269,20 +269,19 @@
     padding: 100px 80px;
     max-width: 1200px;
     margin: 0 auto;
+    /* VISIBLE BY DEFAULT — JS adds animation as enhancement */
+  }
+
+  /* Only hide sections if JS has successfully loaded and added the class */
+  body.has-scroll-anim .section {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .section.visible {
+  body.has-scroll-anim .section.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* Fallback: if JS fails, show everything */
-  .no-js .section {
-    opacity: 1;
-    transform: none;
   }
 
   .section-label {
@@ -661,7 +660,7 @@
     .scroll-hint { display: none; }
     .comp-cell:hover { background: transparent; }
     body { background: white; }
-    .section { opacity: 1; transform: none; }
+    body.has-scroll-anim .section { opacity: 1; transform: none; }
   }
 
   /* ============ RESPONSIVE ============ */
@@ -1014,51 +1013,40 @@
 
 <!-- ============ SCROLL ANIMATION ============ -->
 <script>
-  // Remove no-js class immediately
-  document.documentElement.classList.remove('no-js');
+  try {
+    // Step 1: Enable animations (sections become hidden via CSS)
+    document.body.classList.add('has-scroll-anim');
 
-  function revealSections() {
-    var sections = document.querySelectorAll('.section');
+    // Step 2: Set email link
+    var el = document.querySelector('.email-link');
+    if (el) { el.href = 'mai' + 'lto:' + 'rodny.misaine' + '@' + 'hotmail.fr'; }
 
-    // Try IntersectionObserver first
+    // Step 3: Reveal sections on scroll
+    var secs = document.querySelectorAll('.section');
+
     if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // stop watching once visible
+      var obs = new IntersectionObserver(function(entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            entries[i].target.classList.add('visible');
+            obs.unobserve(entries[i].target);
           }
-        });
-      }, {
-        threshold: 0.02,    // very low threshold — fires as soon as 2% is visible
-        rootMargin: '0px 0px -30px 0px'  // slight offset from bottom
-      });
+        }
+      }, { threshold: 0.01, rootMargin: '50px' });
 
-      sections.forEach(function(s) { observer.observe(s); });
-
-      // Safety net: if after 3 seconds some sections still hidden, force show
-      setTimeout(function() {
-        sections.forEach(function(s) { s.classList.add('visible'); });
-      }, 3500);
-
+      for (var i = 0; i < secs.length; i++) { obs.observe(secs[i]); }
     } else {
-      // Fallback for old browsers: show everything immediately
-      sections.forEach(function(s) { s.classList.add('visible'); });
+      for (var i = 0; i < secs.length; i++) { secs[i].classList.add('visible'); }
     }
-  }
 
-  // Set email link via JS to avoid email obfuscation by CDNs
-  var emailLink = document.querySelector('.email-link');
-  if (emailLink) {
-    var u = 'rodny.misaine'; var d = 'hotmail.fr';
-    emailLink.href = 'mai' + 'lto:' + u + '@' + d;
-  }
+    // Step 4: Safety net — force show everything after 2s no matter what
+    setTimeout(function() {
+      for (var j = 0; j < secs.length; j++) { secs[j].classList.add('visible'); }
+    }, 2000);
 
-  // Run on DOM ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', revealSections);
-  } else {
-    revealSections();
+  } catch(e) {
+    // If ANYTHING fails, remove animation class = all sections become visible
+    document.body.classList.remove('has-scroll-anim');
   }
 </script>
 
